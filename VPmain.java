@@ -2,31 +2,48 @@ import javax.swing.*;
 
 public class VPMain {
     VirtualPet vp = new VirtualPet();
-    
-    public VPMain(){
-        vp.feed()
-    }
 
-    public void waitABeat(int ms){
+    public VPMain() {
+        this.waitABeat(3000); // slows everything down
+        String ans = askForInput("What speed should I run: Medium or Fast?"); // .waitABeat and .askForInput are 2 things needed to make it going
+        if (ans.equals("medium"))
+            vp.mediumSpeed();
+        else
+            vp.fastSpeed();
+        this.waitABeat(3000);
+        vp.fastSpeed();
+        this.waitABeat(3000);
+        vp.fastSpeed();
+        this.waitABeat(3000);
+        vp.fastSpeed();
+        this.waitABeat(3000);
+        vp.fastSpeed();
+        this.waitABeat(3000);
+        String ans2 = askForInput("Can I stop now?");
+        if(ans2.equals("yes"))
+            vp.sick();
+        else
+            vp.dead();
+        }
+
+    public void waitABeat(int ms) {
         try {
-            Thread.sleep(ms); //milliseconds
-        } catch(Exception e){
-        
+            Thread.sleep(ms); // milliseconds
+        } catch (Exception e) {
+
         }
     }
 
-    public String askForInput(String q){
-        String s = (String)JOptionPane.showInputDialog(
-                    new JFrame(),
-                    q,
-                    "Input Dialog",
-                    JOptionPane.PLAIN_MESSAGE
-        );
+    public String askForInput(String q) {
+        String s = (String) JOptionPane.showInputDialog(
+                new JFrame(),
+                q,
+                "Input Dialog",
+                JOptionPane.PLAIN_MESSAGE);
         return s;
     }
 
     public static void main(String[] args) {
-        new VPMain();    
+        new VPMain();
     }
 }
-
