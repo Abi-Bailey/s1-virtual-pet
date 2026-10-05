@@ -39,36 +39,39 @@ public class VirtualPet {
     }
     
     public void sick() {
-        face.setImage("sick_1");
+        face.setImage("sick");
     }
 
     public void dead() {
-        face.setImage("dead_1");
+        face.setImage("dead");
     }
 
-    public void feed() {
-        if (hunger > 10) {
-            hunger = hunger - 10;
-        } else {
-            hunger = 0;
-        }
-        face.setMessage("Yum, thanks");
-        face.setImage("normal");
-    }
-    
-    public void exercise() {
-        hunger = hunger + 3;
-        face.setMessage("1, 2, 3, jump.  Whew.");
-        face.setImage("tired");
-    }
-    
-    public void sleep() {
-        hunger = hunger + 1;
+    public void asleep(){
         face.setImage("asleep");
     }
 
-    public void wonTheLottery(){
-        
-    } 
+    public void tired(){
+        face.setImage("tired");
+    }
+    
+    public void choke(){
+        face.setImage("choke");
+    }
 
+    public void skeleton(){
+        face.setImage("skeleton");
+    }
+    
+    public void daisy(){
+        face.setImage("pushingdaisies");
+    }
+
+    public void happyAngel(){
+        face.setImage("happyangel");
+    }
+
+    public void angryAngel(){
+        face.setImage("angryangel");
+    }
+    
 } // end Virtual Pet

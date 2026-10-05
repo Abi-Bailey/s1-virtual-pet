@@ -15,7 +15,7 @@ public class Name{
         if(!part.equals("")){
         part = part.toLowerCase();
         return part.substring(0,1).toUpperCase() + part.substring(1);
-        }
+         }
         return part;
     }
 }
